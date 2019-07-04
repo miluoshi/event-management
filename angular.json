@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "slido-event-management"
+    }
+  },
+  "defaultProject": "slido-event-management",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
