@@ -26,9 +26,7 @@ export const initialState: EventsState = {
 export const eventReducer = createReducer(
   initialState,
   on(actions.filterByAuthor, (state, { author }) => ({ ...state, authorFilter: author })),
-  on(actions.filterByName, (state, { text }) => ({ ...state, eventTextFilter: text })),
-  on(actions.filterByDescription, (state, { text }) => ({ ...state, eventTextFilter: text })),
-  on(actions.filterByLocation, (state, { text }) => ({ ...state, eventTextFilter: text })),
+  on(actions.filterByText, (state, { text }) => ({ ...state, eventTextFilter: text })),
   // Add new event with given name and increment `nextId`
   on(actions.add, (state, { name }) => {
     const newEvent: Event = generateEvent(state.nextId, name);
@@ -62,13 +60,30 @@ export const getEvents = createSelector(
   }
 );
 
+const getTextFilter = createSelector(
+  getEventsState,
+  (state) => state.eventTextFilter.toLocaleLowerCase()
+);
+
+export const getFilteredEvents = createSelector(
+  getEvents,
+  getTextFilter,
+  (events, textFilter) =>
+    events.filter(
+      (event) =>
+        event.name.toLocaleLowerCase().includes(textFilter) ||
+        event.description.toLocaleLowerCase().includes(textFilter) ||
+        event.location.toLocaleLowerCase().includes(textFilter)
+    )
+);
+
 export interface GroupedEvents {
   past: Event[];
   current: Event[];
   future: Event[];
 }
 export const getGroupedEvents = createSelector(
-  getEvents,
+  getFilteredEvents,
   (events) => {
     const groupedEvents: GroupedEvents = { past: [], current: [], future: [] };
     const isPast = (event: Event) => event.timeEnd.getTime() < Date.now();

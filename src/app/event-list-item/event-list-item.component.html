@@ -1,4 +1,6 @@
-<div class="">{{ event.name }}</div>
-<span class="mat-caption event-time">
+<div>
+  {{ event.name }} <span class="greyed-out">@ {{ event.location }}</span>
+</div>
+<span class="mat-caption greyed-out">
   Od {{ event.timeStart | date: 'H:mm, d.M. y' }} do {{ event.timeEnd | date: 'H:mm, d.M. y' }}
 </span>
