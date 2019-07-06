@@ -1,4 +1,4 @@
-import { Event, EventMap } from './event-data';
+import { Event, EventMap } from './event-store/event.reducer';
 
 export const currentUser = 'demo';
 
@@ -33,4 +33,11 @@ export function generateEvent(id: number, name: string): Event {
     timeEnd,
     timeStart
   };
+}
+
+/** Returns array of unique author ids from all events */
+export function getUniqueAuthors(events: Event[]) {
+  const authors = events.map((e) => e.author);
+
+  return Array.from(new Set(authors));
 }

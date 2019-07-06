@@ -1,16 +1,4 @@
-export interface Event {
-  id: number;
-  name: string;
-  description: string | undefined;
-  timeStart: Date;
-  timeEnd: Date;
-  location: string;
-  author: string;
-}
-
-export interface EventMap {
-  [id: string]: Event;
-}
+import { Event } from './event.reducer';
 
 export const mockEvents: Event[] = [
   {

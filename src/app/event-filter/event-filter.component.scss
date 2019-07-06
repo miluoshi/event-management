@@ -1,4 +1,11 @@
+$gutter-size: 10px;
+
 .event-filter {
   max-width: 500px;
   padding: 10px 16px;
+  margin: 0px (-$gutter-size);
+
+  &>mat-form-field {
+    margin: 0 $gutter-size;
+  }
 }

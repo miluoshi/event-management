@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Event } from '../event-data';
+import { Event } from '../event-store/event.reducer';
 
 @Component({
   selector: 'app-event-list-item',

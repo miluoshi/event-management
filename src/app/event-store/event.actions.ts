@@ -10,7 +10,7 @@ export const filterByText = createAction(
 );
 export const filterByAuthor = createAction(
   '[Event filter] Filter events by author',
-  props<{ author: string }>()
+  props<{ authors: string[] }>()
 );
 
 // Event list item

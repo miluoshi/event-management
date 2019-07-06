@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as fromEvent from '../app.reducer';
+import { map } from 'rxjs/operators';
+import * as fromEvent from '../event-store/event.reducer';
+import { getGroupedFilteredEvents, GroupedEvents } from '../event-store/event.selectors';
 
 @Component({
   selector: 'app-event-list',
@@ -9,10 +11,27 @@ import * as fromEvent from '../app.reducer';
   templateUrl: './event-list.html'
 })
 export class EventListComponent implements OnInit {
-  events$: Observable<fromEvent.GroupedEvents>;
+  pastEvents$: Observable<fromEvent.Event[] | undefined>;
+  currentEvents$: Observable<fromEvent.Event[] | undefined>;
+  futureEvents$: Observable<fromEvent.Event[] | undefined>;
 
   constructor(private store: Store<{ event: fromEvent.EventsState }>) {
-    this.events$ = this.store.pipe(select(fromEvent.getGroupedEvents));
+    const events$ = this.store.pipe(select(getGroupedFilteredEvents));
+
+    this.pastEvents$ = this.getEventGroupStream('past', events$);
+    this.currentEvents$ = this.getEventGroupStream('current', events$);
+    this.futureEvents$ = this.getEventGroupStream('future', events$);
+  }
+
+  /**
+   * Pipes specific time group of events out of all grouped events.
+   * Maps empty list to `undefined` to enable "*ngIf as" syntax with async pipe.
+   */
+  private getEventGroupStream(groupKey: keyof GroupedEvents, events$: Observable<GroupedEvents>) {
+    return events$.pipe(
+      map((group) => group[groupKey]),
+      map((events) => (events.length > 0 ? events : undefined))
+    );
   }
 
   ngOnInit() {}
