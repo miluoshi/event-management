@@ -43,7 +43,7 @@ export const eventReducer = createReducer(
   on(actions.filterByText, (state, { text }) => ({ ...state, eventTextFilter: text })),
   // Add new event with given name and increment `nextId`
   on(actions.add, (state, { name }) => {
-    const newEvent: Event = generateEvent(state.nextId, name);
+    const newEvent: Event = generateEvent(state.nextId, name.trim());
     const events = { ...state.events, [newEvent.id]: newEvent };
     return {
       ...state,

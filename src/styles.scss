@@ -1,3 +1,5 @@
+@import '~@angular/material/theming';
+
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
@@ -7,4 +9,14 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: map-get($mat-grey, 100);
+}
+
+.container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.vertical-center {
+  vertical-align: middle;
 }
