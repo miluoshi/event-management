@@ -5,7 +5,6 @@ import { environment } from '../environments/environment';
 import { SharedModule } from './shared.module';
 
 // App
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // NgRx
@@ -25,7 +24,6 @@ import { eventReducer } from './event-store/event.reducer';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     SharedModule,
-    AppRoutingModule,
     StoreModule.forRoot({ event: eventReducer }),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production, // Restrict extension to log-only mode

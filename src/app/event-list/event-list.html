@@ -1,5 +1,3 @@
-<app-event-filter></app-event-filter>
-
 <mat-action-list role="list">
   <div *ngIf="pastEvents$ | async as pastEvents">
     <h3 mat-subheader>Predošlé</h3>
@@ -9,7 +7,7 @@
   </div>
 
   <div *ngIf="currentEvents$ | async as currentEvents">
-    <mat-divider [hidden]=""></mat-divider>
+    <mat-divider></mat-divider>
 
     <h3 mat-subheader>Aktuálne</h3>
     <mat-list-item role="listitem" *ngFor="let event of currentEvents">
