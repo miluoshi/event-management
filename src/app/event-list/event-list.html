@@ -1,0 +1,26 @@
+<mat-action-list role="list">
+  <div *ngIf="(events$ | async).past.length > 0">
+    <h3 mat-subheader>Predošlé</h3>
+    <mat-list-item role="listitem" *ngFor="let event of (events$ | async).past">
+      <app-event-list-item [event]="event"></app-event-list-item>
+    </mat-list-item>
+  </div>
+
+  <div *ngIf="(events$ | async).current.length > 0">
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Aktuálne</h3>
+    <mat-list-item role="listitem" *ngFor="let event of (events$ | async).current">
+      <app-event-list-item [event]="event"></app-event-list-item>
+    </mat-list-item>
+  </div>
+
+  <div *ngIf="(events$ | async).future.length > 0">
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Budúce</h3>
+    <mat-list-item role="listitem" *ngFor="let event of (events$ | async).future">
+      <app-event-list-item [event]="event"></app-event-list-item>
+    </mat-list-item>
+  </div>
+</mat-action-list>
