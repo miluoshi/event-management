@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { Action, createReducer, on } from '@ngrx/store';
 import * as actions from './event.actions';
 import { generateEvent, getUniqueAuthors, normalizeEventsData } from './helpers';
 import { mockEvents, nextEventId } from './mock-event-data';
@@ -37,7 +37,7 @@ export const initialState: EventsState = {
 };
 
 // === REDUCER ===
-export const eventReducer = createReducer(
+const eventReducerFn = createReducer(
   initialState,
   on(actions.filterByAuthor, (state, { authors }) => ({ ...state, authorFilter: authors })),
   on(actions.filterByText, (state, { text }) => ({ ...state, eventTextFilter: text })),
@@ -64,3 +64,7 @@ export const eventReducer = createReducer(
     return { ...state, events };
   })
 );
+
+export function eventReducer(state: EventsState | undefined, action: Action) {
+  return eventReducerFn(state, action);
+}
