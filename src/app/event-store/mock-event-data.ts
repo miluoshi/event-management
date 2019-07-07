@@ -29,6 +29,17 @@ export const mockEvents: Event[] = [
     name: 'Dúhový PRIDE Bratislava 2019',
     timeEnd: new Date(2019, 6, 20, 15, 0),
     timeStart: new Date(2019, 6, 20, 20, 0)
+  },
+  {
+    author: 'Dodi',
+    description: `Posledný koncert U2 sa menežéri v spolupráci s našou stranou rozhodli usporiadať vo Fekišovciach.
+      Bono zaspieva na začiatok štátnu hymnu. Aj druhú slohu.
+      Pani starostka bude koncert moderovať a Ďodi už pracuje na on-line rezerváciách vstupeniek.`,
+    id: 3,
+    location: 'Fekišovce',
+    name: 'U2 V Kultúrnom Dome Vo Fekišovciach',
+    timeEnd: new Date(2019, 8, 30, 20, 0),
+    timeStart: new Date(2019, 3, 1, 10, 0)
   }
 ];
 
