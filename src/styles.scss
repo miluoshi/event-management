@@ -12,6 +12,11 @@ body {
   background-color: map-get($mat-grey, 100);
 }
 
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .container {
   margin-left: 16px;
   margin-right: 16px;
@@ -33,4 +38,10 @@ body {
   display: block;
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+mat-icon.mat-icon-small {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
 }

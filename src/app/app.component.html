@@ -4,6 +4,8 @@
   <span class="mat-small">Prihlásený ako {{ currentUser }} </span>
 </mat-toolbar>
 
-<app-event-filter class="spaced-row"></app-event-filter>
-<app-event-list class="spaced-row"></app-event-list>
-<app-add-event-form (addEvent)="onAddEvent($event)" class="spaced-row"></app-add-event-form>
+<div class="main-content">
+  <app-event-filter class="spaced-row"></app-event-filter>
+  <app-event-list class="spaced-row"></app-event-list>
+  <app-add-event-form (addEvent)="onAddEvent($event)" class="spaced-row"></app-add-event-form>
+</div>

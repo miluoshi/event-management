@@ -3,7 +3,13 @@
     {{ event.name }} <span class="greyed-out">@ {{ event.location }}</span>
   </div>
   <span class="mat-caption greyed-out">
-    Od {{ event.timeStart | date: 'H:mm, d.M. y' }} do {{ event.timeEnd | date: 'H:mm, d.M. y' }}
+    <mat-icon class="mat-icon-small vertical-center">person</mat-icon>
+    <span class="vertical-center">{{ event.author }}</span>
+    <span class="inline-spacer"></span>
+    <mat-icon class="mat-icon-small vertical-center">event</mat-icon>
+    <span class="vertical-center">
+      Od {{ event.timeStart | date: 'H:mm, d.M. y' }} do {{ event.timeEnd | date: 'H:mm, d.M. y' }}
+    </span>
   </span>
 </div>
 
