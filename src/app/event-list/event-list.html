@@ -6,7 +6,7 @@
   </mat-card-title>
 
   <mat-action-list role="list">
-    <div *ngIf="pastEvents$ | async as pastEvents">
+    <div *ngIf="pastEvents$ | async as pastEvents" class="list-group">
       <h3 mat-subheader>Predošlé</h3>
       <mat-list-item role="listitem" *ngFor="let event of pastEvents">
         <app-event-list-item
@@ -17,7 +17,7 @@
       </mat-list-item>
     </div>
 
-    <div *ngIf="currentEvents$ | async as currentEvents">
+    <div *ngIf="currentEvents$ | async as currentEvents" class="list-group">
       <mat-divider></mat-divider>
 
       <h3 mat-subheader>Aktuálne</h3>
@@ -30,7 +30,7 @@
       </mat-list-item>
     </div>
 
-    <div *ngIf="futureEvents$ | async as futureEvents">
+    <div *ngIf="futureEvents$ | async as futureEvents" class="list-group">
       <mat-divider></mat-divider>
 
       <h3 mat-subheader>Budúce</h3>
