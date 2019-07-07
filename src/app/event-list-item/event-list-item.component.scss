@@ -3,3 +3,8 @@
 .greyed-out {
   color: map-get($mat-grey, 700);
 }
+
+:host {
+  display: flex;
+  width: 100%;
+}

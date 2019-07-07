@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { duplicate, remove } from '../event-store/event.actions';
 import * as fromEvent from '../event-store/event.reducer';
 import { getGroupedFilteredEvents, GroupedEvents } from '../event-store/event.selectors';
 
@@ -32,6 +33,14 @@ export class EventListComponent implements OnInit {
       map((group) => group[groupKey]),
       map((events) => (events.length > 0 ? events : undefined))
     );
+  }
+
+  onDuplicate(id: number) {
+    this.store.dispatch(duplicate({ id }));
+  }
+
+  onRemove(id: number) {
+    this.store.dispatch(remove({ id }));
   }
 
   ngOnInit() {}

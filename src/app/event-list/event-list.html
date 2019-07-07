@@ -9,7 +9,11 @@
     <div *ngIf="pastEvents$ | async as pastEvents">
       <h3 mat-subheader>Predošlé</h3>
       <mat-list-item role="listitem" *ngFor="let event of pastEvents">
-        <app-event-list-item [event]="event"></app-event-list-item>
+        <app-event-list-item
+          [event]="event"
+          (duplicate)="onDuplicate($event)"
+          (remove)="onRemove($event)"
+        ></app-event-list-item>
       </mat-list-item>
     </div>
 
@@ -18,7 +22,11 @@
 
       <h3 mat-subheader>Aktuálne</h3>
       <mat-list-item role="listitem" *ngFor="let event of currentEvents">
-        <app-event-list-item [event]="event"></app-event-list-item>
+        <app-event-list-item
+          [event]="event"
+          (duplicate)="onDuplicate($event)"
+          (remove)="onRemove($event)"
+        ></app-event-list-item>
       </mat-list-item>
     </div>
 
@@ -27,7 +35,11 @@
 
       <h3 mat-subheader>Budúce</h3>
       <mat-list-item role="listitem" *ngFor="let event of futureEvents">
-        <app-event-list-item [event]="event"></app-event-list-item>
+        <app-event-list-item
+          [event]="event"
+          (duplicate)="onDuplicate($event)"
+          (remove)="onRemove($event)"
+        ></app-event-list-item>
       </mat-list-item>
     </div>
   </mat-action-list>

@@ -1,6 +1,17 @@
-<div>
-  {{ event.name }} <span class="greyed-out">@ {{ event.location }}</span>
+<div class="stretch-width">
+  <div>
+    {{ event.name }} <span class="greyed-out">@ {{ event.location }}</span>
+  </div>
+  <span class="mat-caption greyed-out">
+    Od {{ event.timeStart | date: 'H:mm, d.M. y' }} do {{ event.timeEnd | date: 'H:mm, d.M. y' }}
+  </span>
 </div>
-<span class="mat-caption greyed-out">
-  Od {{ event.timeStart | date: 'H:mm, d.M. y' }} do {{ event.timeEnd | date: 'H:mm, d.M. y' }}
-</span>
+
+<div class="event-list-item-buttons flex">
+  <button mat-icon-button matTooltip="Vytvoriť kópiu" (click)="onDuplicate()">
+    <mat-icon>file_copy</mat-icon>
+  </button>
+  <button mat-icon-button color="warn" matTooltip="Vymazať" (click)="onRemove()">
+    <mat-icon>clear</mat-icon>
+  </button>
+</div>

@@ -11,7 +11,8 @@ import {
   MatInputModule,
   MatListModule,
   MatSelectModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +28,8 @@ import {
     MatInputModule,
     MatListModule,
     MatSelectModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTooltipModule
   ],
   imports: [CommonModule]
 })

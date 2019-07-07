@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Event } from '../event-store/event.reducer';
 
 @Component({
@@ -6,10 +6,15 @@ import { Event } from '../event-store/event.reducer';
   styleUrls: ['./event-list-item.component.scss'],
   templateUrl: './event-list-item.component.html'
 })
-export class EventListItemComponent implements OnInit {
+export class EventListItemComponent {
   @Input() event: Event;
+  @Output() duplicate = new EventEmitter<number>();
+  @Output() remove = new EventEmitter<number>();
 
-  constructor() {}
-
-  ngOnInit() {}
+  onDuplicate() {
+    this.duplicate.emit(this.event.id);
+  }
+  onRemove() {
+    this.remove.emit(this.event.id);
+  }
 }

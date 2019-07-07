@@ -14,6 +14,6 @@ export const filterByAuthor = createAction(
 );
 
 // Event list item
-export const remove = createAction('[Event list item] Remove event', props<{ id: string }>());
-export const duplicate = createAction('[Event list item] Duplicate event', props<{ id: string }>());
-export const openDetail = createAction('[Event list item] Open detail', props<{ id: string }>());
+export const remove = createAction('[Event list item] Remove event', props<{ id: number }>());
+export const duplicate = createAction('[Event list item] Duplicate event', props<{ id: number }>());
+export const openDetail = createAction('[Event list item] Open detail', props<{ id: number }>());
