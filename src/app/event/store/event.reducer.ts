@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { generateEvent, getUniqueAuthors, normalizeEventsData } from '../helpers';
 import * as actions from './event.actions';
+import { generateEvent, getUniqueAuthors, normalizeEventsData } from './helpers';
 import { mockEvents, nextEventId } from './mock-event-data';
 
 // === STATE DEFINITIONS ===

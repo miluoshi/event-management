@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { Event } from '../../store/event.reducer';
 import { EventDetailDialogComponent } from '../event-detail-dialog/event-detail-dialog.component';
-import { Event } from '../event-store/event.reducer';
 
 @Component({
   selector: 'app-event-list-item',

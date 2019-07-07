@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { duplicate, remove } from '../event-store/event.actions';
-import * as fromEvent from '../event-store/event.reducer';
-import { getGroupedFilteredEvents, GroupedEvents } from '../event-store/event.selectors';
+import { duplicate, remove } from '../../store/event.actions';
+import * as fromEvent from '../../store/event.reducer';
+import { getGroupedFilteredEvents, GroupedEvents } from '../../store/event.selectors';
 
 @Component({
   selector: 'app-event-list',

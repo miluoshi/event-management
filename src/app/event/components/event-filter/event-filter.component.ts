@@ -3,9 +3,9 @@ import { FormControl } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { filterByAuthor, filterByText } from '../event-store/event.actions';
-import * as fromEvent from '../event-store/event.reducer';
-import { getAllAuthors, getAuthorFilter } from '../event-store/event.selectors';
+import { filterByAuthor, filterByText } from '../../store/event.actions';
+import * as fromEvent from '../../store/event.reducer';
+import { getAllAuthors, getAuthorFilter } from '../../store/event.selectors';
 
 @Component({
   selector: 'app-event-filter',

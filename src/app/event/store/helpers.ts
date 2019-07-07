@@ -1,5 +1,5 @@
 import * as faker from 'faker';
-import { Event, EventMap } from './event-store/event.reducer';
+import { Event, EventMap } from './event.reducer';
 
 export const currentUser = 'demo';
 
@@ -26,7 +26,7 @@ export function generateEvent(id: number, name: string): Event {
   const { timeStart, timeEnd } = getRandomEventDates(timeBox);
 
   // Randomly generate user ("demo" or random name)
-  const author = ['demo', faker.internet.userName()][Math.round(Math.random())];
+  const author = [currentUser, faker.internet.userName()][Math.round(Math.random())];
 
   return {
     author,

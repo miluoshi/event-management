@@ -1,4 +1,5 @@
 import { Event } from './event.reducer';
+import { currentUser } from './helpers';
 
 export const mockEvents: Event[] = [
   {
@@ -11,7 +12,7 @@ export const mockEvents: Event[] = [
     timeStart: new Date(2019, 5, 17, 9)
   },
   {
-    author: 'demo',
+    author: currentUser,
     description: `Romantická atmosféra botanickej záhrady a tóny majstrov našej hudobnej scény
       pozývajú na jedinečný a neopakovateľný zážitok.
       Organizuje Hudobný klub Kamel v spolupráci s Botanickou záhradou UK a BKIS.`,
@@ -22,7 +23,7 @@ export const mockEvents: Event[] = [
     timeStart: new Date(2019, 6, 20, 18, 30)
   },
   {
-    author: 'demo',
+    author: currentUser,
     description: 'Deviaty ročník pestrofarebného festivalu Dúhový PRIDE Bratislava',
     id: 2,
     location: 'Bratislava',

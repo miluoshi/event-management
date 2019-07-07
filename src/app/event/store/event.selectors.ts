@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { getUniqueAuthors } from '../helpers';
 import { Event, EventsState } from './event.reducer';
+import { getUniqueAuthors } from './helpers';
 
 const getEventsState = createFeatureSelector<EventsState>('event');
 
