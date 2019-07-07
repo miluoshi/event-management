@@ -1,5 +1,6 @@
 {
   "extends": ["tslint-config-prettier"],
+  "linterOptions": { "exclude": ["src/polyfills.ts", "src/environments/*"] },
   "rules": {
     "ban-comma-operator": true,
     "member-access": [true, "no-public"],
