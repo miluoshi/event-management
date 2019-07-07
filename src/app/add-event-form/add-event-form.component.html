@@ -1,15 +1,12 @@
 <mat-card class="container">
-  <mat-card-header>
-    <mat-card-title>
-      <mat-icon class="vertical-center">event</mat-icon>
-      <span>&nbsp;</span>
-      <span class="vertical-center">Nová udalosť</span>
-    </mat-card-title>
-  </mat-card-header>
+  <mat-card-title>
+    <mat-icon class="vertical-center">add</mat-icon>
+    <span class="vertical-center">Nové podujatie</span>
+  </mat-card-title>
 
   <mat-card-content>
     <mat-form-field>
-      <input matInput [formControl]="eventName" placeholder="Názov udalosti" />
+      <input matInput [formControl]="eventName" placeholder="Názov podujatia" />
     </mat-form-field>
   </mat-card-content>
 

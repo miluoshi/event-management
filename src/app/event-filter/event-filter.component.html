@@ -1,16 +1,22 @@
-<div class="container">
-  <div class="event-filter">
-    <mat-form-field>
-      <input matInput [formControl]="textFilter" placeholder="Hľadať udalosť" />
-    </mat-form-field>
+<mat-card class="container">
+  <mat-card-title>
+    <mat-icon class="vertical-center">search</mat-icon>
+    <span class="vertical-center">Vyhľadávanie</span>
+  </mat-card-title>
+  <mat-card-content>
+    <div class="event-filter">
+      <mat-form-field>
+        <input matInput [formControl]="textFilter" placeholder="Názov, popis, alebo miesto" />
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Autor</mat-label>
-      <mat-select [formControl]="authorFilter" multiple>
-        <mat-option *ngFor="let author of allEventAuthors$ | async" [value]="author">
-          {{ author }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-</div>
+      <mat-form-field>
+        <mat-label>Autor</mat-label>
+        <mat-select [formControl]="authorFilter" multiple>
+          <mat-option *ngFor="let author of allEventAuthors$ | async" [value]="author">
+            {{ author }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>

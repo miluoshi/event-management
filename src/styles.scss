@@ -20,3 +20,17 @@ body {
 .vertical-center {
   vertical-align: middle;
 }
+
+.stretch-width {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.spaced-row+.spaced-row {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

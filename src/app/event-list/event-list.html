@@ -1,26 +1,34 @@
-<mat-action-list role="list">
-  <div *ngIf="pastEvents$ | async as pastEvents">
-    <h3 mat-subheader>Predošlé</h3>
-    <mat-list-item role="listitem" *ngFor="let event of pastEvents">
-      <app-event-list-item [event]="event"></app-event-list-item>
-    </mat-list-item>
-  </div>
+<mat-card class="container">
+  <mat-card-title>
+    <mat-icon class="vertical-center">event</mat-icon>
+    <span>&nbsp;</span>
+    <span class="vertical-center">Zoznam podujatí</span>
+  </mat-card-title>
 
-  <div *ngIf="currentEvents$ | async as currentEvents">
-    <mat-divider></mat-divider>
+  <mat-action-list role="list">
+    <div *ngIf="pastEvents$ | async as pastEvents">
+      <h3 mat-subheader>Predošlé</h3>
+      <mat-list-item role="listitem" *ngFor="let event of pastEvents">
+        <app-event-list-item [event]="event"></app-event-list-item>
+      </mat-list-item>
+    </div>
 
-    <h3 mat-subheader>Aktuálne</h3>
-    <mat-list-item role="listitem" *ngFor="let event of currentEvents">
-      <app-event-list-item [event]="event"></app-event-list-item>
-    </mat-list-item>
-  </div>
+    <div *ngIf="currentEvents$ | async as currentEvents">
+      <mat-divider></mat-divider>
 
-  <div *ngIf="futureEvents$ | async as futureEvents">
-    <mat-divider></mat-divider>
+      <h3 mat-subheader>Aktuálne</h3>
+      <mat-list-item role="listitem" *ngFor="let event of currentEvents">
+        <app-event-list-item [event]="event"></app-event-list-item>
+      </mat-list-item>
+    </div>
 
-    <h3 mat-subheader>Budúce</h3>
-    <mat-list-item role="listitem" *ngFor="let event of futureEvents">
-      <app-event-list-item [event]="event"></app-event-list-item>
-    </mat-list-item>
-  </div>
-</mat-action-list>
+    <div *ngIf="futureEvents$ | async as futureEvents">
+      <mat-divider></mat-divider>
+
+      <h3 mat-subheader>Budúce</h3>
+      <mat-list-item role="listitem" *ngFor="let event of futureEvents">
+        <app-event-list-item [event]="event"></app-event-list-item>
+      </mat-list-item>
+    </div>
+  </mat-action-list>
+</mat-card>
