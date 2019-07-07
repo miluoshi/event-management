@@ -41,12 +41,15 @@ export const eventReducer = createReducer(
   initialState,
   on(actions.filterByAuthor, (state, { authors }) => ({ ...state, authorFilter: authors })),
   on(actions.filterByText, (state, { text }) => ({ ...state, eventTextFilter: text })),
-  // Add new event with given name and increment `nextId`
+  // Add new event with given name, increment `nextId`, and new author to `authorFilter`.
   on(actions.add, (state, { name }) => {
     const newEvent: Event = generateEvent(state.nextId, name.trim());
+    // Add author of added event to the "author filter" so it is automatically displayed
+    const authorFilter = Array.from(new Set(state.authorFilter.concat(newEvent.author)));
     const events = { ...state.events, [newEvent.id]: newEvent };
     return {
       ...state,
+      authorFilter,
       events,
       nextId: state.nextId + 1
     };

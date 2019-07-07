@@ -6,12 +6,16 @@
   <mat-card-content>
     <div class="event-filter">
       <mat-form-field>
-        <input matInput [formControl]="textFilter" placeholder="Názov, popis, alebo miesto" />
+        <input
+          matInput
+          [formControl]="textFilterFormControl"
+          placeholder="Názov, popis, alebo miesto"
+        />
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Autor</mat-label>
-        <mat-select [formControl]="authorFilter" multiple>
+        <mat-select [formControl]="authorFilterFormControl" multiple>
           <mat-option *ngFor="let author of allEventAuthors$ | async" [value]="author">
             {{ author }}
           </mat-option>

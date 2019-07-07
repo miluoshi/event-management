@@ -18,7 +18,7 @@ export const getAllAuthors = createSelector(
   (events) => getUniqueAuthors(events)
 );
 
-const getAuthorFilter = createSelector(
+export const getAuthorFilter = createSelector(
   getEventsState,
   (state) => state.authorFilter
 );
