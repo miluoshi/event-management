@@ -13,7 +13,7 @@ export class EventListItemComponent {
   @Output() duplicate = new EventEmitter<number>();
   @Output() remove = new EventEmitter<number>();
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {}
 
   openDetailDialog() {
     this.dialog.open(EventDetailDialogComponent, {

@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>
+  <mat-icon class="vertical-center">add_circle</mat-icon>
+  <span>&nbsp;</span>
+  <span class="vertical-center">Nové podujatie</span>
+</h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput [formControl]="eventName" placeholder="Názov" />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>
+    Zatvoriť
+  </button>
+  <button mat-button [disabled]="eventName.value.length === 0" (click)="onClickAddEvent()">
+    Pridať
+  </button>
+</mat-dialog-actions>
