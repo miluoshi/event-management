@@ -7,7 +7,7 @@
       <span>&nbsp;</span>
       <span>Začiatok podujatia:</span>
     </dt>
-    <dd>{{ event.timeStart | date }}</dd>
+    <dd>{{ event.timeStart | date: 'H:mm, MMM d, y' }}</dd>
   </dl>
   <dl>
     <dt>
@@ -15,7 +15,7 @@
       <span>&nbsp;</span>
       <span>Koniec podujatia:</span>
     </dt>
-    <dd>{{ event.timeEnd | date }}</dd>
+    <dd>{{ event.timeEnd | date: 'H:mm, MMM d, y' }}</dd>
   </dl>
   <dl>
     <dt>

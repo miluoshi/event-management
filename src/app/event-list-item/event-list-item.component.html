@@ -8,7 +8,11 @@
     <span class="inline-spacer"></span>
     <mat-icon class="mat-icon-small vertical-center">event</mat-icon>
     <span class="vertical-center">
-      Od {{ event.timeStart | date: 'H:mm, d.M. y' }} do {{ event.timeEnd | date: 'H:mm, d.M. y' }}
+      {{ event.timeStart | date: 'H:mm, MMM d, y' }}
+    </span>
+    <mat-icon class="mat-icon-small vertical-center">arrow_right</mat-icon>
+    <span class="vertical-center">
+      {{ event.timeEnd | date: 'H:mm, MMM d, y' }}
     </span>
   </span>
 </div>
