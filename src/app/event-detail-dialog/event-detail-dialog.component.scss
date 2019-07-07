@@ -1,0 +1,15 @@
+dl {
+  display: flex;
+  align-items: center;
+}
+
+dt {
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+  font-weight: bold;
+}
+
+dd {
+  margin-inline-start: 0;
+}

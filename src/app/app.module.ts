@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AddEventFormComponent } from './add-event-form/add-event-form.component';
+import { EventDetailDialogComponent } from './event-detail-dialog/event-detail-dialog.component';
 import { EventFilterComponent } from './event-filter/event-filter.component';
 import { EventListItemComponent } from './event-list-item/event-list-item.component';
 import { EventListComponent } from './event-list/event-list.component';
@@ -24,8 +25,11 @@ import { eventReducer } from './event-store/event.reducer';
     EventListComponent,
     EventListItemComponent,
     EventFilterComponent,
-    AddEventFormComponent
+    AddEventFormComponent,
+    EventDetailDialogComponent
   ],
+  // Components opened in dialog are not added to initial compilation automatically, thus they need to be defined here.
+  entryComponents: [EventDetailDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

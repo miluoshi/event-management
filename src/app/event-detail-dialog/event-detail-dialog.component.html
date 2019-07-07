@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>{{ event.name }}</h1>
+
+<mat-dialog-content>
+  <dl>
+    <dt>
+      <mat-icon>event</mat-icon>
+      <span>&nbsp;</span>
+      <span>Začiatok podujatia:</span>
+    </dt>
+    <dd>{{ event.timeStart | date }}</dd>
+  </dl>
+  <dl>
+    <dt>
+      <mat-icon>event</mat-icon>
+      <span>&nbsp;</span>
+      <span>Koniec podujatia:</span>
+    </dt>
+    <dd>{{ event.timeEnd | date }}</dd>
+  </dl>
+  <dl>
+    <dt>
+      <mat-icon>location_on</mat-icon>
+      <span>&nbsp;</span>
+      <span>Miesto konania:</span>
+    </dt>
+    <dd>{{ event.location }}</dd>
+  </dl>
+  <dl>
+    <dt>
+      <mat-icon>person</mat-icon>
+      <span>&nbsp;</span>
+      <span>Autor:</span>
+    </dt>
+    <dd>{{ event.author }}</dd>
+  </dl>
+
+  <h4>
+    <mat-icon class="vertical-center">description</mat-icon>
+    <span>&nbsp;</span>
+    <span class="vertical-center">Popis podujatia:</span>
+  </h4>
+  <p>{{ event.description }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-dialog-close mat-button>Zavrieť</button>
+</mat-dialog-actions>
