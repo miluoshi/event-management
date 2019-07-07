@@ -20,7 +20,7 @@
     <div *ngIf="currentEvents$ | async as currentEvents" class="list-group">
       <mat-divider></mat-divider>
 
-      <h3 mat-subheader>Aktuálne</h3>
+      <h3 mat-subheader>Práve prebiehajúce</h3>
       <mat-list-item role="listitem" *ngFor="let event of currentEvents">
         <app-event-list-item
           [event]="event"
